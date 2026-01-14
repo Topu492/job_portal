@@ -18,16 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-Route::get('company/dashboard', function () {
-    return view('frontend.company-dashboard.dashboard');
-})->middleware(['auth', 'verified'])->name('company.dashboard');
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -35,3 +25,33 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::group(
+    [
+        'middleware' => ['auth', 'verified', 'user.role:candidate'],
+        'prefix' => 'candidate',
+        'as' => 'candidate.'
+    ],
+    function() {
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');  });
+
+
+
+Route::group(
+    [
+        'middleware' => ['auth', 'verified', 'user.role:company'],
+        'prefix' => 'company',
+        'as' => 'company.'
+    ],
+    function() {
+
+Route::get('/dashboard', function () {
+    return view('frontend.company-dashboard.dashboard');
+})->name('dashboard');
+
+    });
+
+
+
