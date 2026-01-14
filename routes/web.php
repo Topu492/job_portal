@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+/****** Candidate Route    ******/
+
 Route::group(
     [
         'middleware' => ['auth', 'verified', 'user.role:candidate'],
@@ -38,6 +41,8 @@ Route::get('/dashboard', function () {
 })->name('dashboard');  });
 
 
+
+/****** Company Route    ******/
 
 Route::group(
     [
