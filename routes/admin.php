@@ -35,7 +35,8 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin', 'as' => 'admi
 
     Route::get('dashboard', function(){ 
         return('admin.dashboard.index');
-       });
+       })->name('dashboard');
+       
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 
