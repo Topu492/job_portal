@@ -18,6 +18,6 @@ class DashboardController extends Controller
     }
 
     function index() : View {
-      return view('admin.layout.master');
+      return view('admin.dashboard.index');
     }
 }
