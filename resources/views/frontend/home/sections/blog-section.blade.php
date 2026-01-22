@@ -11,30 +11,7 @@
         <div class="box-swiper style-nav-top">
           <div class="swiper-container swiper-group-3 swiper">
             <div class="swiper-wrapper pt-5">
-                @foreach ($blogs as $blog)
-                <div class="swiper-slide">
-                  <div class="card-grid-3 hover-up wow animate__animated animate__fadeIn">
-                    <div class="text-center card-grid-3-image"><a href="{{ route('blogs.show', $blog->slug) }}">
-                        <figure><img alt="joblist" src="{{ asset($blog->image) }}"></figure>
-                      </a></div>
-                    <div class="card-block-info">
-                      <h5><a href="{{ route('blogs.show', $blog->slug) }}">{{ $blog->title }}</a></h5>
-                      <p class="mt-10 color-text-paragraph font-sm">{{ Str::limit(strip_tags($blog->description), 100, '...') }}</p>
-                      <div class="card-2-bottom mt-20">
-                        <div class="row">
-                          <div class="col-lg-6 col-6">
-                            <div class="d-flex">
-                              <div class="info-right-img"><span class="font-sm font-bold color-brand-1 op-70">{{ $blog->author->name }}</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-6 text-end col-6">{{ formatDate($blog->created_at) }}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
+                
 
             </div>
           </div>

@@ -9,27 +9,7 @@
         <div class="box-swiper mt-50">
           <div class="swiper-container swiper-group-4-border swiper">
             <div class="swiper-wrapper pb-70 pt-5">
-                @foreach ($reviews as $review)
-                <div class="swiper-slide hover-up">
-                  <div class="card-review-1">
-                    <div class="image-review">
-                      <img src="{{ asset($review->image) }}" alt="joblist">
-                      <div class="review-name">
-                        <h5>{{ $review->name }}</h5><span class="font-xs">{{ $review->title }}</span>
-                      </div>
-                    </div>
-                    <div class="review-info">
-                      <div class="review-comment">{{ $review->review }}</div>
-                      <div class="review-rating">
-                        @for ($i = 1; $i <= $review->rating; $i++)
-                        <img src="{{ asset('frontend/assets/imgs/template/icons/star.svg') }}" alt="joblist">
-                        @endfor
-                    </div>
-
-                    </div>
-                  </div>
-                </div>
-                @endforeach
+              
 
             </div>
             <div class="swiper-pagination swiper-pagination-style-border"></div>

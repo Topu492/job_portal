@@ -7,31 +7,24 @@
         </div>
         <div class="header-nav">
           <nav class="nav-main-menu">
-            @php
-                $navigationMenu = \Menu::getByName('Navigation Menu');
-
-            @endphp
+            
             <ul class="main-menu">
-                @foreach ($navigationMenu as $menu)
+               
 
-                @if ($menu['child'])
-                <li class="has-children"><a href="{{ $menu['link'] }}">{{ $menu['label'] }}</a>
+             
+                <li class="has-children"><a href=""></a>
                     <ul class="sub-menu">
-                        @foreach ($menu['child'] as $childMenu)
-                        <li><a href="{{ $childMenu['link'] }}">{{ $childMenu['label'] }}</a></li>
-                        @endforeach
+                       
+                        <li><a href=""></a></li>
+                       
                     </ul>
                   </li>
-                @else
-                  @if (auth()->user()?->role == 'candidate' && $menu['link'] != '/pricing')
-                  <li class="has-children"><a class="" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a></li>
-                  @else
-                  <li class="has-children"><a class="" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a></li>
+               
+                  <li class="has-children"><a class="" href=""></a></li>
+                  
+                  <li class="has-children"><a class="" href=""></a></li>
 
-                  @endif
-                @endif
-
-                @endforeach
+                
 
             </ul>
           </nav>
@@ -41,16 +34,14 @@
         <div class="header-right">
           <div class="block-signin">
             <!-- <a class="text-link-bd-btom hover-up" href="page-register.html">Register</a> -->
-            @guest
+            
             <a class="btn btn-default btn-shadow ml-40 hover-up" href="{{ route('login') }}">Sign in</a>
-            @endguest
-            @auth
-                @if (auth()->user()->role === 'company')
-                    <a class="btn btn-default btn-shadow ml-40 hover-up" style="width: 200px" href="{{ route('company.dashboard') }}">Company Dashobard</a>
-                @elseif(auth()->user()->role === 'candidate')
-                    <a class="btn btn-default btn-shadow ml-40 hover-up" style="width: 200px" href="{{ route('candidate.dashboard') }}">Candidate Dashboard</a>
-                @endif
-            @endauth
+          
+              
+                    <a class="btn btn-default btn-shadow ml-40 hover-up" style="width: 200px" href="">Company Dashobard</a>
+           
+                    <a class="btn btn-default btn-shadow ml-40 hover-up" style="width: 200px" href="">Candidate Dashboard</a>
+               
           </div>
         </div>
       </div>
