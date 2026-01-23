@@ -3,10 +3,10 @@
         <ul class="nav" role="tablist">
             <li><a class="btn btn-border mb-20 active" href="{{ route('candidate.dashboard') }}">Dashboard</a>
             </li>
-            <li><a class="btn btn-border mb-20" href="{{ route('candidate.applied-jobs.index') }}">Applied Jobs</a></li>
-            <li><a class="btn btn-border mb-20" href="{{ route('candidate.bookmarked-jobs.index') }}">Bookmarked</a>
+            <li><a class="btn btn-border mb-20" href="">Applied Jobs</a></li>
+            <li><a class="btn btn-border mb-20" href="">Bookmarked</a>
             </li>
-            <li><a class="btn btn-border mb-20" href="{{ route('candidate.profile.index') }}">My Profile</a></li>
+            <li><a class="btn btn-border mb-20" href="">My Profile</a></li>
             <li>
                  <!-- Authentication -->
                  <form method="POST" action="{{ route('logout') }}">
